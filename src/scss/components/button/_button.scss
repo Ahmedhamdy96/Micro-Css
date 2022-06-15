@@ -3,4 +3,16 @@
   padding: 1rem;
   font-size: calc($font-base * 2.5);
   cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn.outlined {
+  border: 3px solid currentColor;
+  background-color: transparent;
+}
+
+.btn.outlined:hover {
+  border: 3px solid transparent;
+  color: #222;
+  background-color: #fff;
 }
