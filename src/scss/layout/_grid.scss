@@ -3,14 +3,29 @@
    -------------------------------------------- */
 
 $number-of-columns: 10;
+$base-gap: 0.5rem;
+
+$gaps: (
+  "1": $base-gap * 1,
+  "2": $base-gap * 2,
+  "3": $base-gap * 3,
+  "4": $base-gap * 4,
+  "5": $base-gap * 5,
+);
 
 .row {
   display: flex;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
 }
 
 @for $i from 1 to ($number-of-columns + 1) {
   .col-#{$i} {
     width: calc(($i / $number-of-columns) * 100%);
+  }
+}
+
+@each $key, $val in $gaps {
+  .gap-#{$key} {
+    gap: $val;
   }
 }

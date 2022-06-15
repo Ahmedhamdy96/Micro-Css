@@ -1271,7 +1271,6 @@ button:focus {
    -------------------------------------------- */
 .row {
   display: flex;
-  flex-wrap: wrap;
 }
 
 .col-1 {
@@ -1312,6 +1311,26 @@ button:focus {
 
 .col-10 {
   width: 100%;
+}
+
+.gap-1 {
+  gap: 0.5rem;
+}
+
+.gap-2 {
+  gap: 1rem;
+}
+
+.gap-3 {
+  gap: 1.5rem;
+}
+
+.gap-4 {
+  gap: 2rem;
+}
+
+.gap-5 {
+  gap: 2.5rem;
 }
 
 .btn {
