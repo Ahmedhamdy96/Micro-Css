@@ -1,0 +1,6 @@
+@use "./../../variables/typography" as *;
+.btn {
+  padding: 1rem;
+  font-size: calc($font-base * 2.5);
+  cursor: pointer;
+}

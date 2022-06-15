@@ -27,7 +27,14 @@ $colors: (
       color: mix(#000, $val, $i * 10);
     }
     .bg-#{$key}-dark-#{$i} {
-      color: mix(#000, $val, $i * 10);
+      background-color: mix(#000, $val, $i * 10);
+    }
+    // hover effect on buttons
+    .btn.bg-#{$key}-light-#{$i}:hover {
+      background-color: mix(#fff, $val, $i * 5);
+    }
+    .btn.bg-#{$key}-dark-#{$i}:hover {
+      background-color: mix(#000, $val, $i * 5);
     }
   }
 }

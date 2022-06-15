@@ -44,6 +44,7 @@ h6,
   font-size: calc($font-base * 2);
 }
 
+// change font-base at different breakpoints
 @include respond(sm) {
   :root {
     --font-base: 0.6rem;
