@@ -1,0 +1,24 @@
+{
+  "name": "css-start",
+  "version": "1.0.0",
+  "description": "minimal css frame work",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ahmed hamdy",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.27.10",
+    "cssnano": "^5.1.11",
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^9.0.1",
+    "gulp-pug": "^5.0.0",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.52.3"
+  },
+  "dependencies": {
+    "gulp-cli": "^2.3.0",
+    "gulp-terser": "^2.1.0"
+  }
+}

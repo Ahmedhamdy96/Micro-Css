@@ -1,0 +1,51 @@
+@use "./../mixins/media" as *;
+
+/* ----------------------------------- 
+-------- font-family and sizes -------
+-------------------------------------- */
+
+:root {
+  --font-base: 1rem;
+}
+
+$font-family: "Roboto", sans-serif;
+$font-base: var(--font-base);
+/* ----------------------------------- 
+-------- headings --------------------
+-------------------------------------- */
+// 1rem -> 10px
+h1,
+.h1 {
+  font-size: calc($font-base * 7); // 70px
+}
+
+h2,
+.h2 {
+  font-size: calc($font-base * 6);
+}
+
+h3,
+.h3 {
+  font-size: calc($font-base * 5);
+}
+
+h4,
+.h4 {
+  font-size: calc($font-base * 4);
+}
+
+h5,
+.h5 {
+  font-size: calc($font-base * 3);
+}
+
+h6,
+.h6 {
+  font-size: calc($font-base * 2);
+}
+
+@include respond(sm) {
+  :root {
+    --font-base: 0.6rem;
+  }
+}
