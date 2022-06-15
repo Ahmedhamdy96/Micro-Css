@@ -1,0 +1,16 @@
+/* --------------------------------------------
+   ------------- grid systems -----------------
+   -------------------------------------------- */
+
+$number-of-columns: 10;
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@for $i from 1 to ($number-of-columns + 1) {
+  .col-#{$i} {
+    width: calc(($i / $number-of-columns) * 100%);
+  }
+}
