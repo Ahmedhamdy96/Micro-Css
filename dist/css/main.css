@@ -798,6 +798,51 @@ h6,
     --font-base: 0.6rem;
   }
 }
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+@media (max-width: 18.75em) {
+  .text-left-xs {
+    text-align: left;
+  }
+  .text-center-xs {
+    text-align: center;
+  }
+  .text-right-xs {
+    text-align: right;
+  }
+}
+@media (max-width: 21.87em) {
+  .text-left-sm {
+    text-align: left;
+  }
+  .text-center-sm {
+    text-align: center;
+  }
+  .text-right-sm {
+    text-align: right;
+  }
+}
+@media (max-width: 56.25em) {
+  .text-left-md {
+    text-align: left;
+  }
+  .text-center-md {
+    text-align: center;
+  }
+  .text-right-md {
+    text-align: right;
+  }
+}
 /* --------------------------------------
    ------- utilities --------------------
    -------------------------------------- */

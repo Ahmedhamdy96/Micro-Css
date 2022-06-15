@@ -10,6 +10,13 @@
 
 $font-family: "Roboto", sans-serif;
 $font-base: var(--font-base);
+
+$text-align: (
+  "left": left,
+  "center": center,
+  "right": right,
+);
+
 /* ----------------------------------- 
 -------- headings --------------------
 -------------------------------------- */
@@ -48,5 +55,25 @@ h6,
 @include respond(sm) {
   :root {
     --font-base: 0.6rem;
+  }
+}
+
+// generate text-alignment classes
+
+@each $key, $val in $text-align {
+  .text-#{$key} {
+    text-align: $val;
+    @debug $val;
+  }
+}
+
+// generate text-align classes for each breakpoint { xs - sm - md }
+@each $bp, $val in $breakpoints {
+  @include respond($bp) {
+    @each $key, $val in $text-align {
+      .text-#{$key}-#{$bp} {
+        text-align: $val;
+      }
+    }
   }
 }
