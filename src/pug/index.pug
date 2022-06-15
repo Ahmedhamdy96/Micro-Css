@@ -17,10 +17,10 @@ html(lang="en")
       h2 Colors 
       div(style="display:flex ; ")
         - for(let i = 1 ; i<10 ; i++){
-          div(class=`bg-blue-light-${i}` style="width:100px ; height:100px")
+          div(class=`bg-blue-light-${i} m-right-1` style="width:100px ; height:100px")
         - }   
         - for(let i = 1 ; i<10 ; i++){
-          div(class=`bg-orange-light-${i}` style="width:100px ; height:100px")
+          div(class=`bg-orange-light-${i} m-right-1` style="width:100px ; height:100px")
         - }   
       br
       br
@@ -41,11 +41,11 @@ html(lang="en")
 
       div(style="display:flex ; ")
         - for(let i = 1 ; i<10 ; i++){
-          button(class=`btn bg-blue-light-${i}`) Click Me
+          button(class=`btn bg-blue-light-${i} m-top-2 m-bottom-2 m-left-2 m-right-2`) Click Me
         - }   
       div(style="display:flex ; ")
         - for(let i = 1 ; i<10 ; i++){
-          button(class=`btn text-orange-light-${i} bg-blue-dark-${i}`) Click Me
+          button(class=`btn text-orange-light-${i} bg-blue-dark-${i} m-top-2 m-bottom-2 m-left-2 m-right-2`) Click Me
         - }   
       br
       br
