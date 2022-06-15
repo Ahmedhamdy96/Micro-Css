@@ -1,8 +1,10 @@
+@use "./../mixins/media" as *;
+
 /* --------------------------------------------
    ------------- grid systems -----------------
    -------------------------------------------- */
 
-$number-of-columns: 10;
+$number-of-columns: 12;
 $base-gap: 0.5rem;
 
 $gaps: (
@@ -13,19 +15,93 @@ $gaps: (
   "5": $base-gap * 5,
 );
 
+$justify: (
+  "just-center": center,
+  "just-space-between": space-between,
+  "just-space-evenly": space-evenly,
+  "just-start": flex-start,
+  "just-end": flex-end,
+);
+
+$align: (
+  "align-items-center": center,
+  "align-items-space-between": space-between,
+  "align-items-space-evenly": space-evenly,
+  "align-items-start": flex-start,
+  "align-items-end": flex-end,
+);
+
 .row {
+  width: 100%;
   display: flex;
-  // flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
+.col {
+  flex-grow: 1;
+  // max-width: 100%;
+}
 @for $i from 1 to ($number-of-columns + 1) {
-  .col-#{$i} {
+  .row .col-#{$i} {
     width: calc(($i / $number-of-columns) * 100%);
   }
 }
 
 @each $key, $val in $gaps {
+  .gap-#{$key} > * {
+    margin: $val;
+  }
+  // remove the space at the begining and the end
   .gap-#{$key} {
-    gap: $val;
+    margin-left: $val * -1;
+    margin-right: $val * -1;
+  }
+}
+
+// generate col classes for each breakpoint { xs - sm - md }
+
+@each $key, $val in $breakpoints {
+  @include respond($key) {
+    @for $i from 1 to $number-of-columns + 1 {
+      .col-#{$key}-#{$i} {
+        width: calc(($i / $number-of-columns) * 100%);
+      }
+    }
+  }
+}
+
+// justify content classes
+@each $key, $val in $justify {
+  .#{$key} {
+    justify-content: $val;
+  }
+}
+
+// generate jsutifiy classes for each breakpoint { xs - sm - md }
+@each $bp, $val in $breakpoints {
+  @include respond($bp) {
+    @each $key, $val in $justify {
+      .#{$key}-#{$bp} {
+        justify-content: $val;
+      }
+    }
+  }
+}
+
+// align items classes
+@each $key, $val in $align {
+  .#{$key} {
+    align-items: $val;
+  }
+}
+
+// generate align classes for each breakpoint { xs - sm - md }
+@each $bp, $val in $breakpoints {
+  @include respond($bp) {
+    @each $key, $val in $align {
+      .#{$key}-#{$bp} {
+        align-items: $val;
+      }
+    }
   }
 }
