@@ -1204,6 +1204,15 @@ h6,
   margin-left: 10rem;
 }
 
+.circle {
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  aspect-ratio: 1;
+}
+
 /* --------------------------- 
    -------- global resets ----
    --------------------------*/
