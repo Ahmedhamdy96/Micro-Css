@@ -1,4 +1,5 @@
 @use "./../../variables/typography" as *;
+$hover-color: #222;
 .btn {
   padding: 1rem;
   font-size: calc($font-base * 2.5);
@@ -13,6 +14,6 @@
 
 .btn.outlined:hover {
   border: 3px solid transparent;
-  color: #222;
+  color: $hover-color;
   background-color: #fff;
 }

@@ -11,95 +11,32 @@ html(lang="en")
     link(rel="stylesheet" href="./css/main.css")
     title Css Framwork
   body
-  
-    div.container
-      p bodytext 
-      h2 Colors 
-      div(style="display:flex ; ")
-        - for(let i = 1 ; i<10 ; i++){
-          div(class=`bg-blue-light-${i} m-right-1` style="width:100px ; height:100px")
-        - }   
-        - for(let i = 1 ; i<10 ; i++){
-          div(class=`bg-orange-light-${i} m-right-1` style="width:100px ; height:100px")
-        - }   
+    .container 
+      p.text-center.p-5.m-5.uppercase show case of my css micro framework 
+      h1.text-center H1 heading 
+      h2.text-center H2 heading
+      h3.text-center H3 heading 
+      h4.text-center H4 heading
+      h5.text-center H5 heading 
+      h6.text-center H6 heading
       br
       br
-      h2 Heading 
-      h1 Heading H1 
-      h2 Heading H2 
-      h3 Heading H3 
-      h4 Heading H4 
-      h5 Heading H5 
-      h6 Heading H6 
       br
       br
-      p Paragrapgh
       br
       br
-      h2 Links 
-      a(href="#") Link
-
-      div(style="display:flex ; ")
-        - for(let i = 1 ; i<10 ; i++){
-          button(class=`btn bg-blue-light-${i} m-top-2 m-bottom-2 m-left-2 m-right-2`) Click Me
-        - }   
-      div(style="display:flex ; ")
-        - for(let i = 1 ; i<10 ; i++){
-          button(class=`btn text-orange-light-${i} bg-blue-dark-${i} m-top-2 m-bottom-2 m-left-2 m-right-2`) Click Me
-        - }
-      div(style="display:flex ; ")
-        - for(let i = 1 ; i<10 ; i++){
-          button(class=`btn outlined text-blue-light-${i} m-top-2 m-bottom-2 m-left-2 m-right-2`) Click Me
-        - }      
-      span(class="bg-orange-light-5 text-blue-dark-2 p-top-2 p-bottom-2 p-left-2 p-right-2 circle" ) hamada
-
-      div(class="m-top-5 m-bottom-5 row gap-1")
-        - for(let i = 1 ; i<15 ; i++){
-          div(class="col-1 bg-orange text-blue-dark-5 p-3") Div
-        - }
-      div(class="m-top-5 m-bottom-5 row gap-3")
-        - for(let i = 1 ; i<15 ; i++){
-          div(class="col-1 bg-orange text-blue-dark-5 p-3") Div
-        - }
-      div(class="container row gap-3 ")
-        div(class="bg-orange-light-8 text-blue p-5 ") one
-        div(class="bg-orange-light-8 text-blue p-5 ") two
-        div(class="bg-orange-light-8 text-blue p-5 ") three
-        div(class="bg-orange-light-8 text-blue p-5 ") four
-        div(class="bg-orange-light-8 text-blue p-5 ") five
-        div(class="bg-orange-light-8 text-blue p-5 ") six
-        div(class="bg-orange-light-8 text-blue p-5 ") seven
-        div(class="bg-orange-light-8 text-blue p-5 ") eight
-        div(class="bg-orange-light-8 text-blue p-5 ") nine
-        div(class="bg-orange-light-8 text-blue p-5 ") ten  
-        div(class="bg-orange-light-8 text-blue p-5 ") eleven  
-    
-      div(class="container")
-      div(class="m-top-5 row gap-4")
-        div(class=" bg-blue-light-1 p-5 col") 1
-        div(class=" bg-blue-light-2 p-5 col") 2 
-        div(class=" bg-blue-light-1 p-5 col") 3
-        div(class=" bg-blue-light-2 p-5 col") 4 
-        div(class=" bg-blue-light-1 p-5 col") 5
-        div(class=" bg-blue-light-2 p-5 col col-md-3") 6 
-        div(class=" bg-blue-light-1 p-5 col") 7
-        div(class=" bg-blue-light-2 p-5 col") 8
-        div(class=" bg-blue-light-1 p-5 col") 9
-        div(class=" bg-blue-light-2 p-5 col") 10 
-      div(class="row gap-1")
-        div(class=" bg-orange-light-1 text-blue p-5 col") 1
-        div(class=" bg-orange-light-2 text-blue p-5 col") 2 
-
-
-
-
- 
-      br 
-      br
-
-
-
-     
-
-     
-    script(src="./js/main.js")
+      p.text-center.text-orange.uppercase generated color grades from any color 
+      .m-top-5.m-top-5.m-bottom-5
+        .row.gap-2 
+          - for(let i = 1 ; i<11 ; i++){     
+              div(class=`col bg-orange-light-${i} text-blue-dark-${i}  p-5`) #{i}
+          - }
+      .m-top-5.m-top-5.m-bottom-5
+        .row.gap-2 
+          - for(let i = 1 ; i<11 ; i++){     
+              div(class=`col bg-blue-light-${i} text-blue-dark-${i}  p-5`) #{i}
+          - }
+      span.circle.bg-orange.text-blue-dark-5.p-5.uppercase.m-top-5.m-bottom-5 circle 
+      span.circle.bg-blue.text-orange-light-5.p-5.uppercase.m-top-5.m-bottom-5 circle
+              
+    script(src="./js/main.js") 

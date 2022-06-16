@@ -15,7 +15,7 @@ $colors: (
     background-color: $val;
   }
   // generate 10 light grades
-  @for $i from 0 to 10 {
+  @for $i from 0 to 11 {
     .text-#{$key}-light-#{$i} {
       color: mix(#fff, $val, $i * 10);
     }

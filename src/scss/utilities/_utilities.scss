@@ -182,3 +182,105 @@ $utilities: (
   border-radius: 50%;
   aspect-ratio: 1;
 }
+
+$padding-axis: (
+  "x": (
+    "prefix": "px",
+    "values": (
+      "1": $base-padding * 1,
+      "2": $base-padding * 2,
+      "3": $base-padding * 3,
+      "4": $base-padding * 4,
+      "5": $base-padding * 5,
+      "6": $base-padding * 6,
+      "7": $base-padding * 7,
+      "8": $base-padding * 8,
+      "9": $base-padding * 9,
+      "10": $base-padding * 10,
+    ),
+  ),
+  "y": (
+    "prefix": "py",
+    "values": (
+      "1": $base-padding * 1,
+      "2": $base-padding * 2,
+      "3": $base-padding * 3,
+      "4": $base-padding * 4,
+      "5": $base-padding * 5,
+      "6": $base-padding * 6,
+      "7": $base-padding * 7,
+      "8": $base-padding * 8,
+      "9": $base-padding * 9,
+      "10": $base-padding * 10,
+    ),
+  ),
+);
+
+@each $key, $map in $padding-axis {
+  $prefix: map.get($map, "prefix");
+  $values: map.get($map, "values");
+  @each $key, $val in $values {
+    @if ($prefix == "px") {
+      .#{$prefix}-#{$key} {
+        padding-left: $val;
+        padding-right: $val;
+      }
+    } @else if($prefix == "py") {
+      .#{$prefix}-#{$key} {
+        padding-top: $val;
+        padding-bottom: $val;
+      }
+    }
+  }
+}
+
+$margin-axis: (
+  "x": (
+    "prefix": "mx",
+    "values": (
+      "1": $base-margin * 1,
+      "2": $base-margin * 2,
+      "3": $base-margin * 3,
+      "4": $base-margin * 4,
+      "5": $base-margin * 5,
+      "6": $base-margin * 6,
+      "7": $base-margin * 7,
+      "8": $base-margin * 8,
+      "9": $base-margin * 9,
+      "10": $base-margin * 10,
+    ),
+  ),
+  "y": (
+    "prefix": "my",
+    "values": (
+      "1": $base-margin * 1,
+      "2": $base-margin * 2,
+      "3": $base-margin * 3,
+      "4": $base-margin * 4,
+      "5": $base-margin * 5,
+      "6": $base-margin * 6,
+      "7": $base-margin * 7,
+      "8": $base-margin * 8,
+      "9": $base-margin * 9,
+      "10": $base-margin * 10,
+    ),
+  ),
+);
+
+@each $key, $map in $margin-axis {
+  $prefix: map.get($map, "prefix");
+  $values: map.get($map, "values");
+  @each $key, $val in $values {
+    @if ($prefix == "mx") {
+      .#{$prefix}-#{$key} {
+        margin-left: $val;
+        margin-right: $val;
+      }
+    } @else if($prefix == "my") {
+      .#{$prefix}-#{$key} {
+        margin-top: $val;
+        margin-bottom: $val;
+      }
+    }
+  }
+}
