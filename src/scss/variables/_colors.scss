@@ -2,9 +2,11 @@
    ---- colors --------------  
    --------------------------*/
 $colors: (
-  "orange": orange,
-  "blue": blue,
-  "red": #ff0000,
+  "black": #2c3e50,
+  "blue": #2980b9,
+  "red": #c0392b,
+  "green": #27ae60,
+  "orange": #f39c12,
 );
 
 @each $key, $val in $colors {

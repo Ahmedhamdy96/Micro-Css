@@ -1,3 +1,32 @@
+mixin seprator 
+ - for(let i = 0 ; i<10 ; i++){
+    <br>
+ - }
+
+//- generate all different classes for margin 
+mixin show(className)
+
+  - for( let i = 1 ; i<11 ; i++){
+    - if( className == 'mb'){
+      div(class=`bg-orange ` style="width:250px ; height:250px; position:relative ;  ") 
+        div(class=`bg-red text-orange ${className}-${i}` style="width:fit-content ; font-size:30px ; position:absolute ; bottom:0 ;  ") #{i}
+    -}else if( className == 'mr'){
+         div(class=`bg-orange ` style="width:250px ; height:250px; position:relative ;  ") 
+          div(class=`bg-red text-orange ${className}-${i}` style="width:fit-content ; font-size:30px ; position:absolute ; right:0 ;  ") #{i}
+      
+    - }
+    
+    -else{
+      div(class=`bg-orange ` style="width:250px ; height:250px; ") 
+        div(class=`bg-red text-orange ${className}-${i}` style="width:fit-content ; font-size:30px ") #{i}
+    -}
+
+  - }
+  
+
+ 
+
+
 doctype html
 html(lang="en")
   head
@@ -10,7 +39,7 @@ html(lang="en")
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
     link(rel="stylesheet" href="./css/main.css")
     title Css Framwork
-  body
+  body(class="text-black")
     .container 
       p.text-center.p-5.m-5.uppercase show case of my css micro framework 
       h1.text-center H1 heading 
@@ -19,24 +48,111 @@ html(lang="en")
       h4.text-center H4 heading
       h5.text-center H5 heading 
       h6.text-center H6 heading
-      br
-      br
-      br
-      br
-      br
-      br
-      p.text-center.text-orange.uppercase generated color grades from any color 
+      +seprator
+      p.text-center.uppercase generate color grades from any color 
+      h4.text-center.my-3 Background Colors 
       .m-top-5.m-top-5.m-bottom-5
         .row.gap-2 
           - for(let i = 1 ; i<11 ; i++){     
-              div(class=`col bg-orange-light-${i} text-blue-dark-${i}  p-5`) #{i}
+              div(class=`col bg-orange-light-${i} p-5`) #{i}
           - }
       .m-top-5.m-top-5.m-bottom-5
         .row.gap-2 
           - for(let i = 1 ; i<11 ; i++){     
-              div(class=`col bg-blue-light-${i} text-blue-dark-${i}  p-5`) #{i}
+              div(class=`col bg-blue-light-${i} p-5`) #{i}
           - }
-      span.circle.bg-orange.text-blue-dark-5.p-5.uppercase.m-top-5.m-bottom-5 circle 
-      span.circle.bg-blue.text-orange-light-5.p-5.uppercase.m-top-5.m-bottom-5 circle
-              
-    script(src="./js/main.js") 
+      .m-top-5.m-top-5.m-bottom-5
+        .row.gap-2 
+          - for(let i = 1 ; i<11 ; i++){     
+              div(class=`col bg-red-light-${i} p-5`) #{i}
+          - }
+      .m-top-5.m-top-5.m-bottom-5
+        .row.gap-2 
+          - for(let i = 1 ; i<11 ; i++){     
+              div(class=`col bg-green-light-${i} p-5`) #{i}
+          - }
+
+      +seprator
+      h4.text-center.my-3 Text Colors 
+      .row.gap-2
+        - for(let i = 1 ; i<11 ; i++){     
+              h5(class=`col text-orange-light-${i} p-1`)  text 
+        - } 
+      .row.gap-2
+        - for(let i = 1 ; i<11 ; i++){     
+              h5(class=`col text-orange-dark-${i} p-1`)  text 
+        - } 
+      .row.gap-2
+        - for(let i = 1 ; i<11 ; i++){     
+              h5(class=`col text-blue-light-${i} p-1`)  text 
+        - } 
+      .row.gap-2
+        - for(let i = 1 ; i<11 ; i++){     
+              h5(class=`col text-blue-dark-${i} p-1`)  text 
+        - } 
+      .row.gap-2
+        - for(let i = 1 ; i<11 ; i++){     
+              h5(class=`col text-green-light-${i} p-1`)  text 
+        - } 
+      .row.gap-2
+        - for(let i = 1 ; i<11 ; i++){     
+              h5(class=`col text-green-dark-${i} p-1`)  text 
+        - } 
+      .row.gap-2
+        - for(let i = 1 ; i<11 ; i++){     
+              h5(class=`col text-red-light-${i} p-1`)  text 
+        - } 
+      .row.gap-2
+        - for(let i = 1 ; i<11 ; i++){     
+              h5(class=`col text-red-dark-${i} p-1`)  text 
+        - } 
+      +seprator
+      h4.text-center.my-3 Padding 
+      .row.gap-2.align-items-center 
+        +show('p')
+      h5.text-center.my-3 Padding Top 
+      .row.gap-2.align-items-center 
+        +show('pt')
+      h5.text-center.my-3 Padding Bottom 
+      .row.gap-2.align-items-center 
+        +show('pb') 
+      h5.text-center.my-3 Padding Left 
+      .row.gap-2.align-items-center 
+        +show('pl')   
+      h5.text-center.my-3 Padding right 
+      .row.gap-2.align-items-center 
+        +show('pr')   
+      h5.text-center.my-3 Padding X 
+      .row.gap-2.align-items-center 
+        +show('px')
+      h5.text-center.my-3 Padding Y 
+      .row.gap-2.align-items-center 
+        +show('py')   
+
+
+      +seprator
+      h4.text-center.my-3 Margin 
+
+      div.row.gap-2 
+        +show('m') 
+      h5.text-center.my-3 Margin Top 
+      div.row.gap-2 
+        +show('mt') 
+      h5.text-center.my-3 Margin Bottom 
+      div.row.gap-2 
+        +show('mb') 
+      h5.text-center.my-3 Margin Left 
+      div.row.gap-2 
+        +show('ml')   
+      h5.text-center.my-3 Margin right 
+      div.row.gap-2
+        +show('mr')  
+      h5.text-center.my-3 Margin X 
+      div.row.gap-2 
+        +show('mx')
+      h5.text-center.my-3 Margin Y 
+      div.row.gap-2
+        +show('my')
+ 
+  
+    script(src="./js/main.js")   
