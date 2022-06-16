@@ -13,18 +13,25 @@ mixin show(className)
     -}else if( className == 'mr'){
          div(class=`bg-orange ` style="width:250px ; height:250px; position:relative ;  ") 
           div(class=`bg-red text-orange ${className}-${i}` style="width:fit-content ; font-size:30px ; position:absolute ; right:0 ;  ") #{i}
+
+
+
+
+    - }else if( className == 'br'){
+         div(class=`bg-orange ` style="width:250px ; height:250px; display:flex ; align-items:center ; justify-content:center ;   ") 
+          div(class=`bg-red text-orange ${className}-${i}` style="width:50px ; height:50px ; font-size:30px ; position:absolute ;  display:flex ; align-items:center ; justify-content:center ;   ") #{i}
       
     - }
-    
+     
     -else{
       div(class=`bg-orange ` style="width:250px ; height:250px; ") 
         div(class=`bg-red text-orange ${className}-${i}` style="width:fit-content ; font-size:30px ") #{i}
     -}
-
-  - }
+-}
   
-
+  
  
+  
 
 
 doctype html
@@ -108,51 +115,55 @@ html(lang="en")
         - } 
       +seprator
       h4.text-center.my-3 Padding 
-      .row.gap-2.align-items-center 
+      .row.gap-2.align-items-center.just-center 
         +show('p')
       h5.text-center.my-3 Padding Top 
-      .row.gap-2.align-items-center 
+      .row.gap-2.align-items-center.just-center 
         +show('pt')
       h5.text-center.my-3 Padding Bottom 
-      .row.gap-2.align-items-center 
+      .row.gap-2.align-items-center.just-center 
         +show('pb') 
       h5.text-center.my-3 Padding Left 
-      .row.gap-2.align-items-center 
+      .row.gap-2.align-items-center.just-center 
         +show('pl')   
       h5.text-center.my-3 Padding right 
-      .row.gap-2.align-items-center 
+      .row.gap-2.align-items-center.just-center 
         +show('pr')   
       h5.text-center.my-3 Padding X 
-      .row.gap-2.align-items-center 
+      .row.gap-2.align-items-center.just-center 
         +show('px')
       h5.text-center.my-3 Padding Y 
-      .row.gap-2.align-items-center 
+      .row.gap-2.align-items-center.just-center 
         +show('py')   
 
 
       +seprator
       h4.text-center.my-3 Margin 
 
-      div.row.gap-2 
+      div.row.gap-2.just-center 
         +show('m') 
       h5.text-center.my-3 Margin Top 
-      div.row.gap-2 
+      div.row.gap-2.just-center 
         +show('mt') 
       h5.text-center.my-3 Margin Bottom 
-      div.row.gap-2 
+      div.row.gap-2.just-center 
         +show('mb') 
       h5.text-center.my-3 Margin Left 
-      div.row.gap-2 
+      div.row.gap-2.just-center 
         +show('ml')   
       h5.text-center.my-3 Margin right 
-      div.row.gap-2
+      div.row.gap-2.just-cener
         +show('mr')  
       h5.text-center.my-3 Margin X 
-      div.row.gap-2 
+      div.row.gap-2.just-center 
         +show('mx')
       h5.text-center.my-3 Margin Y 
-      div.row.gap-2
+      div.row.gap-2.just-center
         +show('my')
- 
+      +seprator
+      h4.text-center.my-3 Border radius 
+      .row.gap-2.just-center 
+        +show('br') 
+      +seprator
   
     script(src="./js/main.js")   
