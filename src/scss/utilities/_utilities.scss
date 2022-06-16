@@ -284,3 +284,96 @@ $margin-axis: (
     }
   }
 }
+
+// rounded borders
+$base-border-radius: 1rem;
+
+$border-radius: (
+  "border-radius": (
+    "prefix": "br",
+    "values": (
+      "1": $base-border-radius * 1,
+      "2": $base-border-radius * 2,
+      "3": $base-border-radius * 3,
+      "4": $base-border-radius * 4,
+      "5": $base-border-radius * 5,
+      "6": $base-border-radius * 6,
+      "7": $base-border-radius * 7,
+      "8": $base-border-radius * 8,
+      "9": $base-border-radius * 9,
+      "10": $base-border-radius * 10,
+    ),
+  ),
+  "border-top-left-radius": (
+    "prefix": "br-tl",
+    "values": (
+      "1": $base-border-radius * 1,
+      "2": $base-border-radius * 2,
+      "3": $base-border-radius * 3,
+      "4": $base-border-radius * 4,
+      "5": $base-border-radius * 5,
+      "6": $base-border-radius * 6,
+      "7": $base-border-radius * 7,
+      "8": $base-border-radius * 8,
+      "9": $base-border-radius * 9,
+      "10": $base-border-radius * 10,
+    ),
+  ),
+  "border-top-right-radius": (
+    "prefix": "br-tr",
+    "values": (
+      "1": $base-border-radius * 1,
+      "2": $base-border-radius * 2,
+      "3": $base-border-radius * 3,
+      "4": $base-border-radius * 4,
+      "5": $base-border-radius * 5,
+      "6": $base-border-radius * 6,
+      "7": $base-border-radius * 7,
+      "8": $base-border-radius * 8,
+      "9": $base-border-radius * 9,
+      "10": $base-border-radius * 10,
+    ),
+  ),
+  "border-bottom-right-radius": (
+    "prefix": "br-br",
+    "values": (
+      "1": $base-border-radius * 1,
+      "2": $base-border-radius * 2,
+      "3": $base-border-radius * 3,
+      "4": $base-border-radius * 4,
+      "5": $base-border-radius * 5,
+      "6": $base-border-radius * 6,
+      "7": $base-border-radius * 7,
+      "8": $base-border-radius * 8,
+      "9": $base-border-radius * 9,
+      "10": $base-border-radius * 10,
+    ),
+  ),
+  "border-bottom-left-radius": (
+    "prefix": "br-bl",
+    "values": (
+      "1": $base-border-radius * 1,
+      "2": $base-border-radius * 2,
+      "3": $base-border-radius * 3,
+      "4": $base-border-radius * 4,
+      "5": $base-border-radius * 5,
+      "6": $base-border-radius * 6,
+      "7": $base-border-radius * 7,
+      "8": $base-border-radius * 8,
+      "9": $base-border-radius * 9,
+      "10": $base-border-radius * 10,
+    ),
+  ),
+);
+
+@each $key, $map in $border-radius {
+  $prop: $key;
+  $prefix: map.get($map, "prefix");
+  $values: map.get($map, "values");
+  // @debug $prop $prefix $values;
+  @each $k, $v in $values {
+    .#{$prefix}-#{$k} {
+      #{$prop}: $v;
+    }
+  }
+}
