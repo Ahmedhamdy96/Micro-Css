@@ -3,6 +3,7 @@ const sass = require("gulp-sass")(require("sass")),
   terser = require("gulp-terser"),
   pug = require("gulp-pug"),
   postcss = require("gulp-postcss"),
+  autoprefixer = require("autoprefixer"),
   cssnano = require("cssnano"),
   browsersync = require("browser-sync").create();
 
@@ -12,7 +13,8 @@ const sass = require("gulp-sass")(require("sass")),
 function css(done) {
   src(`./src/scss/main.scss`, { sourcemaps: true })
     .pipe(sass().on("error", sass.logError))
-    // .pipe(postcss([cssnano()]))
+    .pipe(postcss([autoprefixer({ browsers: ["last 5 version"] })]))
+    .pipe(postcss([cssnano()]))
     .pipe(dest("./dist/css", { sourcemaps: "." }));
   done();
 }

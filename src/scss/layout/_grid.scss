@@ -1,11 +1,15 @@
 @use "./../mixins/media" as *;
 
+:root {
+  --gap: 0rem;
+}
+
 /* --------------------------------------------
    ------------- grid systems -----------------
    -------------------------------------------- */
 
 $number-of-columns: 10;
-$base-gap: 0.5rem;
+$base-gap: 1rem;
 
 $gaps: (
   "1": $base-gap * 1,
@@ -39,7 +43,7 @@ $align: (
 
 .col {
   flex-grow: 1;
-  // max-width: 100%;
+  flex-shrink: 0;
 }
 @for $i from 1 to ($number-of-columns + 1) {
   .row .col-#{$i} {
@@ -48,13 +52,8 @@ $align: (
 }
 
 @each $key, $val in $gaps {
-  .gap-#{$key} > * {
-    margin: $val;
-  }
-  // remove the space at the begining and the end
   .gap-#{$key} {
-    margin-left: $val * -1;
-    margin-right: $val * -1;
+    gap: $val;
   }
 }
 
@@ -64,7 +63,7 @@ $align: (
   @include respond($key) {
     @for $i from 1 to $number-of-columns + 1 {
       .col-#{$key}-#{$i} {
-        width: calc(($i / $number-of-columns) * 100%);
+        width: calc(($i / $number-of-columns) * 100%) !important;
       }
     }
   }
